@@ -1,0 +1,53 @@
+{
+  "name": "scratch-archive",
+  "displayName": "Scratch Archive",
+  "description": "Archive all Untitled editors to a local folder and close them to keep your workspace clean.",
+  "version": "0.1.0",
+  "publisher": "tabarnard",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "scratchArchive.archiveAndCloseUntitled",
+        "title": "Scratch Archive: Archive and Close Untitled Editors"
+      },
+      {
+        "command": "scratchArchive.openArchiveFolder",
+        "title": "Scratch Archive: Open Archive Folder"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "scratchArchive.archiveAndCloseUntitled",
+        "key": "ctrl+k x"
+      }
+    ],
+    "configuration": {
+      "title": "Scratch Archive",
+      "properties": {
+        "scratchArchive.archiveDirectory": {
+          "type": "string",
+          "default": "",
+          "description": "Directory where Untitled editors will be archived. If empty, uses ~/.scratch . Relative paths are resolved against the first workspace folder, falling back to the OS home."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "prepublishOnly": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.4.2"
+  }
+}
