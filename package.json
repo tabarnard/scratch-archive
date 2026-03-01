@@ -4,6 +4,11 @@
   "description": "Archive all Untitled editors to a local folder and close them to keep your workspace clean.",
   "version": "0.1.0",
   "publisher": "tabarnard",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tabarnard/scratch-archive.git"
+  },
   "engines": {
     "vscode": "^1.80.0"
   },
